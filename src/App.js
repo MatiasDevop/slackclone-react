@@ -1,15 +1,26 @@
-import React from 'react';
+import React, { useState } from 'react';
 import './App.css';
 import Header from './Header';
 import Sidebar from "./Sidebar";
 import Chat from "./Chat";
+import Login from './Login';
+
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 
+
 function App() {
+
+  const [user, setUser] = useState(null); // or "sonny"
+
   return (
     //BEM naming convention
     <div className="App">
       <Router> 
+        {!user ? (
+          <Login />
+        ): (
+
+        <>
           {/* <h1> lets build and sslacssssk a rocket</h1> */}
           {/* Header */}
           <Header />
@@ -28,6 +39,8 @@ function App() {
               
               {/** React-router -> chat screem */}   
           </div>
+          </>
+          )}
       </Router>
     </div>
   );

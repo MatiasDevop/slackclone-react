@@ -3,7 +3,7 @@ import { useHistory } from 'react-router-dom';
 import db from './firebase';
 import "./SidebarOption.css";
 
-function SidebarOption({Icon, title, id,addChannelOption}) {
+function SidebarOption({Icon, title, id, addChannelOption}) {
     const history = useHistory();
     const selectChannel = () =>{
         if (id) {
